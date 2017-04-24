@@ -8,6 +8,15 @@ public class Principal {
         
         prog1.start();
         new Thread(prog2).start();
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+               for (int i = 0; i < 100; i++){
+                    System.out.println("Programa " + Thread.currentThread().getId()
+                    + "valor: " + i);
+               } 
+            }
+        }).start();
     }
     
 }
